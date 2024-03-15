@@ -26,10 +26,15 @@
 
 @layer utilities {
     .home__title,
-    .card__title {
+    .card__title,
+    .section__title {
         @apply text-4xl font-oswald font-bold uppercase lg:text-6xl;
     }
 
+    .section__title{
+        @apply text-3xl
+    }
+    
     .card__title {
         @apply text-xl
     }
