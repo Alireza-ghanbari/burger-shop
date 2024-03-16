@@ -40,7 +40,7 @@
         <div class="hidden absolute top-14 left-0 w-full py-14 bg-primaryColor border-b border-secondaryColor md:block md:static dark:bg-darkColor md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
           <ul class="flex flex-col text-center gap-5 md:flex-row">
             <li>
-              <a href="#home" class="nav__link hover:text-secondaryColor ease-in duration-200">Home</a>
+              <a href="#home" class="nav__link text-secondaryColor hover:text-secondaryColor ease-in duration-200">Home</a>
             </li>
             <li>
               <a href="#about" class="nav__link hover:text-secondaryColor ease-in duration-200">About us</a>
@@ -165,7 +165,7 @@
     <section id="promo">
       <div class="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
         <!-- card 1 -->
-        <div class="bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+        <div class="promo__card-1 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
           <img src="./img/promo-1.png" alt="promo image" class="w-40 mx-auto hover:animate-movingY md:mx-5 md:mr-10">
 
           <div class="space-y-2 pt-5 md:pt-0">
@@ -177,7 +177,7 @@
         </div>
 
         <!-- card 2 -->
-        <div class="bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+        <div class="promo__card-2 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
           <img src="./img/promo-2.png" alt="promo image" class="w-40 mx-auto hover:animate-movingY md:mx-5 md:mr-10">
 
           <div class="space-y-2 pt-5 md:pt-0">
@@ -193,9 +193,9 @@
     <!--~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~-->
     <section id="about">
       <div  class="container flex flex-col gap-10 md:flex-row">
-        <div class="flex-1"><img src="img/about.jpg" alt="about" class="rounded-lg"></div>
+        <div class="flex-1 about__img"><img src="img/about.jpg" alt="about" class="rounded-lg"></div>
 
-        <div class="flex-1">
+        <div class="flex-1 about__content">
           <h2 class="section__title">FIND FOOD AND DRINKS,
             <br/>
             ALL-IN-ONE PLACE FOR YOUR BEST TASTE</h2>
@@ -230,7 +230,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="menu__items">
           <ul class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             <!-- food -->
             <li class="item_wrap food">
@@ -471,7 +471,7 @@
 
     <!--~~~~~~~~~~~~~~~ Review ~~~~~~~~~~~~~~~-->
     <section id="review" class="bg-primaryColorLight dark:bg-darkColorLight py-20">
-      <div class="container">
+      <div class="customer__review container">
         <div class="max-w-md mx-auto text-center">
           <h2 class="section__title">CUSTOMER REVIEW</h2>
           <div class="separator mx-auto"></div>
@@ -698,6 +698,7 @@
 
   
   <!--~~~~~~~~~~~~~~~ Scroll Reveal ~~~~~~~~~~~~~~~-->
+  <script src="https://unpkg.com/scrollreveal"></script>
 
   <!--~~~~~~~~~~~~~~~ Main.js ~~~~~~~~~~~~~~~-->
     <script src="main.js"></script>

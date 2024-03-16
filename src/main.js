@@ -132,3 +132,56 @@ const scrollHeader=()=>{
 }
 
 window.addEventListener('scroll',scrollHeader)
+
+
+
+const activeLink=()=>{
+    const sections=document.querySelectorAll('section')
+    const navLink=document.querySelectorAll('.nav__link')
+
+    let current='home'
+
+    sections.forEach(section=>{
+        const sectionTop=section.offsetTop
+
+        if(this.scrollY >= sectionTop-60){
+            current=section.getAttribute('id')
+        }
+    })
+
+    navLink.forEach(item=>{
+        item.classList.remove('text-secondaryColor')
+        if(item.href.includes(current)){
+            item.classList.add('text-secondaryColor')
+        }
+    })
+}
+
+window.addEventListener('scroll', activeLink)
+
+
+// -------
+
+
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "60px",
+    duration: 2500,
+    delay: 400
+})
+
+sr.reveal(".home__image")
+sr.reveal(".home__content", {origin: "bottom"})
+sr.reveal(".category__card", {interval: 300})
+
+sr.reveal(".promo__card-1", {origin: "left"})
+sr.reveal(".promo__card-2", {origin: "right"})
+
+sr.reveal(".about__img", {origin: "bottom"})
+sr.reveal(".about__content", {origin: "top"})
+
+sr.reveal(".menu__items", {origin: "left"})
+
+sr.reveal(".customer__review", {origin: "right"})
+
+sr.reveal(".footer")

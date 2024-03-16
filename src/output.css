@@ -1155,10 +1155,6 @@ section{
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.\*\:first-letter\:h-56 > *::first-letter{
-  height: 14rem;
-}
-
 .hover\:-translate-y-1:hover{
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1211,11 +1207,6 @@ section{
 :is(.dark .dark\:bg-darkColorLight){
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-}
-
-:is(.dark .dark\:text-darkColor){
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:hover\:bg-secondaryColor:hover){
