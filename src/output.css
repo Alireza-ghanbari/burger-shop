@@ -446,6 +446,10 @@ video {
   display: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   --tw-bg-opacity: 1;
   background-color: rgb(1 10 94 / var(--tw-bg-opacity));
@@ -455,11 +459,9 @@ body{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (prefers-color-scheme: dark){
-  body{
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  }
+:is(.dark body){
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 section{
@@ -640,12 +642,20 @@ section{
   position: relative;
 }
 
+.-bottom-1\/2{
+  bottom: -50%;
+}
+
 .-bottom-4{
   bottom: -1rem;
 }
 
 .-left-4{
   left: -1rem;
+}
+
+.bottom-4{
+  bottom: 1rem;
 }
 
 .left-0{
@@ -660,8 +670,8 @@ section{
   top: 0px;
 }
 
-.top-10{
-  top: 2.5rem;
+.top-14{
+  top: 3.5rem;
 }
 
 .top-\[0\.7rem\]{
@@ -711,6 +721,10 @@ section{
 
 .block{
   display: block;
+}
+
+.inline-block{
+  display: inline-block;
 }
 
 .flex{
@@ -789,10 +803,6 @@ section{
 
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -955,6 +965,11 @@ section{
   padding: 1.5rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-10{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -968,6 +983,11 @@ section{
 .py-16{
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-20{
@@ -1059,6 +1079,12 @@ section{
   color: rgb(255 204 0 / var(--tw-text-opacity));
 }
 
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1129,6 +1155,10 @@ section{
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.\*\:first-letter\:h-56 > *::first-letter{
+  height: 14rem;
+}
+
 .hover\:-translate-y-1:hover{
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1164,6 +1194,35 @@ section{
   opacity: 0.9;
 }
 
+:is(.dark .dark\:hidden){
+  display: none;
+}
+
+:is(.dark .dark\:border-darkColorLight){
+  --tw-border-opacity: 1;
+  border-color: rgb(23 23 23 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:bg-darkColor){
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-darkColorLight){
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:text-darkColor){
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:hover\:bg-secondaryColor:hover){
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 204 0 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px){
   .md\:static{
     position: static;
@@ -1185,6 +1244,10 @@ section{
 
   .md\:mr-10{
     margin-right: 2.5rem;
+  }
+
+  .md\:mt-0{
+    margin-top: 0px;
   }
 
   .md\:block{
@@ -1225,10 +1288,6 @@ section{
 
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1275,10 +1334,6 @@ section{
 }
 
 @media (min-width: 1024px){
-  .lg\:grid{
-    display: grid;
-  }
-
   .lg\:h-40{
     height: 10rem;
   }
@@ -1303,14 +1358,6 @@ section{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -1325,12 +1372,5 @@ section{
 
   .lg\:gap-12{
     gap: 3rem;
-  }
-}
-
-@media (prefers-color-scheme: dark){
-  .dark\:border-darkColorLight{
-    --tw-border-opacity: 1;
-    border-color: rgb(23 23 23 / var(--tw-border-opacity));
   }
 }

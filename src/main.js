@@ -19,6 +19,41 @@ hamburger.addEventListener('click',()=>{
 
 
 
+
+const html=document.querySelector('html')
+const themeBtn=document.querySelector('#theme-toggle')
+
+if(localStorage.getItem('mode')=='dark'){
+    darkMode()
+}else{
+    lighMode()
+}
+
+themeBtn.addEventListener('click',(e)=>{
+    if(localStorage.getItem('mode')=='light'){
+        darkMode()
+    }else{
+        lighMode()
+    }
+})
+
+
+function darkMode(){
+    html.classList.add('dark')
+    themeBtn.classList.replace('ri-moon-line', 'ri-sun-line')
+    localStorage.setItem('mode','dark')
+}
+
+
+function lighMode(){
+    html.classList.remove('dark')
+    themeBtn.classList.replace('ri-sun-line', 'ri-moon-line')
+    localStorage.setItem('mode','light')
+}
+
+
+
+
 // TABS-------- 
 
 const tabs=document.querySelectorAll('.tabs_wrap ul li')
@@ -35,7 +70,7 @@ tabs.forEach((tab)=>{
 
         tab.classList.add('active')
 
-        
+
 
         const tabval=tab.getAttribute('data-tabs')
 
@@ -64,3 +99,36 @@ tabs.forEach((tab)=>{
 
     })
 })
+
+
+
+const scrollUp=()=>{
+    const scrollUpBtn=document.querySelector('#scroll-up')
+
+    if(this.scrollY >= 250){
+        scrollUpBtn.classList.remove('-bottom-1/2')
+        scrollUpBtn.classList.add('bottom-4')
+    }else{
+        scrollUpBtn.classList.add('-bottom-1/2')
+        scrollUpBtn.classList.remove('bottom-4')
+    }
+}
+
+window.addEventListener('scroll',scrollUp)
+
+
+
+
+
+
+const scrollHeader=()=>{
+    const header=document.querySelector('#header')
+
+    if(this.scrollY >= 50){
+        header.classList.add('border-b', 'border-secondaryColor')
+    }else{
+        header.classList.remove('border-b', 'border-secondaryColor')
+    }
+}
+
+window.addEventListener('scroll',scrollHeader)
